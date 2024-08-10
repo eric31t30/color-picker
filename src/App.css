@@ -1,38 +1,279 @@
-.App {
-  text-align: center;
+@import url('https://fonts.cdnfonts.com/css/hero-4');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+    position: absolute;
+    color: white;
+    font-family: 'Hero', sans-serif;
+    font-size: 45px;
+    top: 50px;
+    left: 20px;
+    letter-spacing: 2px;
+    transform: rotate(350deg);
+    background-image: linear-gradient(to right, cyan, red);
+    color: transparent;
+    background-clip: text;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.deco-title{
+    filter: invert(100);
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+    position: absolute;
+    display: flex;
+    left: 0px;
+    bottom: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cont-picker{
+    z-index: 2;
+}
+
+.picker{
+    width: 200px;
+}
+
+.container-gradient{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -220px;
+    z-index: 1;
+    transition: all 1s ease;
+    pointer-events: none;
+}
+
+.cont-gradient-active{
+    left: -20px;
+    pointer-events: all;
+}
+
+.cont-opt-gradient{
+    width: 220px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(180,58,163);
+    background: linear-gradient(45deg, rgba(180,58,163,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.gradient-directions{
+    position: relative;
+    height: 100%;
+    width: 60%;
+    margin: 20px 0px;
+    color: rgba(240, 248, 255, 0);
+    user-select: none;
+    margin-left: 15px;
+}
+
+.arrows-direction{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+}
+
+
+.arrow-top{
+    background-image: url(./imagenes/flecha-direccion.png);
+    top: 0px;
+    left: 50%;
+    transform: rotate(270deg);
+}
+
+.arrow-right{
+    background-image: url(./imagenes/flecha-direccion.png);
+    top: 50%;
+    right: 0px;
+}
+
+.arrow-bottom{
+    background-image: url(./imagenes/flecha-direccion.png);
+    bottom: 0px;
+    right: 50%;
+    transform: rotate(90deg);
+}
+
+.arrow-left{
+    background-image: url(./imagenes/flecha-direccion.png);
+    bottom: 50%;
+    left: 0px;
+    transform: rotate(180deg); 
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.circle-select{
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px white, inset 0px 0px 10px white;
+}
+
+.cont-color-options{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.colors-options{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.colors{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid rgb(184, 184, 184);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0);
+    user-select: none;
+}
+
+.color-1{
+    background-color: rgba(180,58,163,1);
+}
+
+.color-2{
+    background-color: rgba(253,29,29,1);
+}
+
+.color-3{
+    background-color: rgba(252,176,69,1);
+}
+
+.color-select{
+    border: 3px solid rgb(8, 252, 57);
+}
+
+.button-gradient{
+    width: 140px;
+    height: 20%;
+    margin-top: 10px;
+    background-color: rgb(161, 35, 159);
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Hero', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    user-select: none;
+}
+
+.button-gradient:active{
+    background-color: rgb(223, 71, 220);
+}
+
+
+.button{
+    height: 100px;
+    width: 20px;
+    background-color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+}
+
+.arrow{
+    transform: scale(.8);
+}
+
+
+@media (max-width: 719px){
+
+    .container{
+        bottom: 0px;
+    }
+
+    .picker{
+        width: 130px !important;
+    }
+
+    .container-gradient{
+        left: -170px;
+    }
+
+    .cont-opt-gradient{
+        width: 170px;
+    }
+
+    .cont-gradient-active{
+        left: -20px;
+    }
+
+    .colors{
+        width: 25px;
+        height: 25px;
+    }
+
+    .button-gradient{
+        width: 90px;
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 720px) and (max-width: 1299px){
+
+    h1{
+        font-size: 70px;
+    }
+
+    .picker{
+        width: 240px !important;
+    }
+
+}
+
+@media (min-width: 1920px){
+
+    h1{
+        font-size: 100px;
+        top: 80px;
+    }
 }
